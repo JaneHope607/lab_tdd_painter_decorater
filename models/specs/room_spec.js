@@ -16,13 +16,13 @@ describe('Room', function() {
 
     it('should start not painted', function() {
         const actual = room.painted;
-        assert.strictEqual(actual, false);
+        assert.strictEqual(actual, 0);
     });
 
     it('should be able to be painted', function() {
         room.paint();
         const actual = room.painted;
-        assert.strictEqual(actual, true);
+        assert.strictEqual(actual, 10);
     });
 
 });

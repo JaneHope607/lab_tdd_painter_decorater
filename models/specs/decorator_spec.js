@@ -32,4 +32,25 @@ describe('Decorator', function() {
         assert.deepStrictEqual(actual, 10)
     });
 
+    it('should calculate if has enough paint to paint room', function() {
+        decorator.addPaint(paint);
+        const actual = decorator.isEnoughPaint(room);
+        assert.strictEqual(actual, true)
+    });
+
+    // it('should be able to decrease paint stock when painting', function() {
+    //     decorator.addPaint(paint);
+    //     decorator.addPaint(paint);
+    //     decorator.decreasePaintStock(room);
+    //     const actual = decorator.totalLitres();
+    //     assert.deepStrictEqual(actual, 20)
+    // });
+
+    it('should be able to paint room if enough paint', function() {
+        decorator.addPaint(paint);
+        decorator.addPaint(paint);
+        const actual = decorator.paintRoom(room);
+        assert.deepStrictEqual(actual, true)
+    });
+
 });

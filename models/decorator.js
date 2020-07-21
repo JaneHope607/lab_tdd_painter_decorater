@@ -8,10 +8,33 @@ Decorator.prototype.addPaint = function(paint) {
 
 Decorator.prototype.totalLitres = function() {
     let total = 0
-    for (litre in this.stock) {
+    for (var litre of this.stock) {
         total += litre.litres;
     };
     return total; 
 };
+
+
+Decorator.prototype.isEnoughPaint = function(room) {
+   if (room.area <= this.totalLitres()) {
+       return true;
+   } else {
+       return false;
+   }
+};
+
+// Decorator.prototype.decreasePaintStock = function(room) {
+//     return this.totalLitres() -= room.area;
+// };
+
+Decorator.prototype.paintRoom = function(room) {
+    if (this.isEnoughPaint(room)) {
+        room.paint();
+        return true
+    } else {
+        return false;
+    }
+};
+
 
 module.exports = Decorator;
