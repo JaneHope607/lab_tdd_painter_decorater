@@ -20,7 +20,11 @@ describe('Decorator', function() {
         assert.deepStrictEqual(actual, []);
     });
 
-    
+    it('should be able to add a can of paint to paint stock', function() {
+        decorator.addPaint(paint);
+        const actual = decorator.stock.length;
+        assert.deepStrictEqual(actual, 1)
+    });
 
 
 });
