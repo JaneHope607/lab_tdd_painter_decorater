@@ -26,5 +26,10 @@ describe('Decorator', function() {
         assert.deepStrictEqual(actual, 1)
     });
 
+    it('should be able to calculate total litres paint in stock', function() {
+        decorator.addPaint(paint);
+        const actual = decorator.totalLitres()
+        assert.deepStrictEqual(actual, 10)
+    });
 
 });
