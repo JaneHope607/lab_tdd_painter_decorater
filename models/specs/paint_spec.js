@@ -21,8 +21,8 @@ describe('Paint', function() {
 
     it('should be able to empty paint', function() {
         paint.removeAllPaint();
-        const actual = paint.litres;
-        assert.strictEqual(actual, 0);
+        const actual = Boolean(paint.litres);
+        assert.equal(actual, false)
     });
 
     
